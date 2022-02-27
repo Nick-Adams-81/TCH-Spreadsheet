@@ -4,12 +4,15 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
-    // user table values
+    // users table values
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column
+    private String email;
 
     @Column(nullable = false)
     private String username;
@@ -17,8 +20,23 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
-    // getters and setters for users
+    @Column
+    private boolean isAdmin;
 
+    // authentication copy constructor
+
+    public User(User copy) {
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+        isAdmin = copy.isAdmin;
+    }
+
+    public User() {}
+
+
+    // getters and setters for users table values
     public long getId() {
         return id;
     }
@@ -41,5 +59,21 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }
