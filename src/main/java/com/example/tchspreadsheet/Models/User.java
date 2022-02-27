@@ -24,7 +24,6 @@ public class User {
     private boolean isAdmin;
 
     // authentication copy constructor
-
     public User(User copy) {
         id = copy.id;
         email = copy.email;
@@ -33,6 +32,7 @@ public class User {
         isAdmin = copy.isAdmin;
     }
 
+    // empty User constructor required for class to work properly
     public User() {}
 
 
