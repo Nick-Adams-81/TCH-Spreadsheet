@@ -20,7 +20,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column
+    @Column(columnDefinition = "TINYINT(1)")
     private boolean isAdmin;
 
     // authentication copy constructor
