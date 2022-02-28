@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Optional;
 
-
 @Controller
-public class HomeController {
+public class SpreadsheetController {
 
     private final UserRepository userDao;
 
-    public HomeController(UserRepository userDao) {
+    public SpreadsheetController(UserRepository userDao) {
         this.userDao = userDao;
     }
 
-    @GetMapping("/home")
-    public String home(Model model) {
+
+    @GetMapping("/spreadsheet")
+    public String spreadsheet(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Optional<User> user = userDao.findById(loginUser.getId());
         model.addAttribute("homepage", user.get());
-        return "home";
+        return "spreadsheet";
     }
 }
