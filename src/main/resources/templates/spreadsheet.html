@@ -1,20 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="partials.html :: site-head"></div>
 <body>
-<nav>
-    <ul>
-        <!-- More links here... -->
-        <li>
-            <form th:action="@{/logout}" th:method="post">
-                <button class="btn-link btn" style="margin-top: 8px">Logout</button>
-            </form>
-        </li>
-    </ul>
-</nav>
+<div th:replace="partials.html :: navbar"></div>
 <h1>spreadsheet test</h1>
 </body>
 </html>
