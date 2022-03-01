@@ -134,7 +134,6 @@ public class Spreadsheet {
 
     }
 
-
     // empty constructor for the class to function properly //
     public Spreadsheet() {}
 
@@ -358,11 +357,11 @@ public class Spreadsheet {
     }
 
     public long getFiveThousands() {
-        return fiveThousands;
+        return loseFiveThousands;
     }
 
-    public void setFiveThousands(long fiveThousands) {
-        this.fiveThousands = fiveThousands;
+    public void setFiveThousands(long loseFiveThousands) {
+        this.loseFiveThousands = loseFiveThousands;
     }
 
     public long getRackedFiveThousands() {
@@ -372,6 +371,5 @@ public class Spreadsheet {
     public void setRackedFiveThousands(long rackedFiveThousands) {
         this.rackedFiveThousands = rackedFiveThousands;
     }
-
 
 }
