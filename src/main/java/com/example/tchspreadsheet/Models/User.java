@@ -1,6 +1,7 @@
 package com.example.tchspreadsheet.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -36,6 +37,18 @@ public class User {
     public User() {}
 
 
+
+    // setting up the many-to-many relationship with spreadsheet table //
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_spreadsheet_bridge",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "spreadsheet_id")}
+    )
+    private List<Spreadsheet> spreadsheet;
+
+
+
     // getters and setters for users table values
     public long getId() {
         return id;
@@ -43,6 +56,14 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Spreadsheet> getSpreadsheet() {
+        return spreadsheet;
+    }
+
+    public void setSpreadsheet(List<Spreadsheet> spreadsheet) {
+        this.spreadsheet = spreadsheet;
     }
 
     public String getUsername() {

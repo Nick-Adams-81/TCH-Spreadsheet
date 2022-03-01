@@ -2,6 +2,7 @@ package com.example.tchspreadsheet.Models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "spreadsheet")
@@ -137,15 +138,25 @@ public class Spreadsheet {
     // empty constructor for the class to function properly //
     public Spreadsheet() {}
 
+    // setting up relationship with user table
+    @ManyToMany(mappedBy = "spreadsheet")
+    private List<User> user;
+
     // getters and setters //
-
-
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<User> getUser() {
+        return user;
+    }
+
+    public void setUser(List<User> user) {
+        this.user = user;
     }
 
     public long getLoseOnes() {
