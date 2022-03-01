@@ -29,11 +29,29 @@ public class Spreadsheet {
     @Column
     private long strappedFives;
 
+    @Column
+    private long loseTens;
 
+    @Column
+    private long strappedTens;
 
+    @Column
+    private long loseTwenties;
 
+    @Column
+    private long strappedTwenties;
 
+    @Column
+    private long loseFifties;
 
+    @Column
+    private long strappedFifties;
+
+    @Column
+    private long loseHundreds;
+
+    @Column
+    private long strappedHundreds;
 
 
 
