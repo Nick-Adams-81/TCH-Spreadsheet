@@ -98,6 +98,24 @@ public class Spreadsheet {
     private long rackedFiveThousands;
 
 
+    // copy constructor //
+    public Spreadsheet(Spreadsheet copy) {
+        id = copy.id;
+        loseOnes = copy.loseOnes;
+        strappedOnes = copy.strappedOnes;
+        loseTwos = copy.loseTwos;
+        strappedTwos = copy.strappedTwos;
+        loseFives = copy.loseFives;
+        strappedFives = copy.strappedFives;
+        loseTens = copy.loseTens;
+        strappedTens = copy.strappedTens;
+        loseTwenties = copy.loseTwenties;
+        strappedTwenties = copy.strappedTwenties;
+        loseFifties = copy.loseFifties;
+        strappedFifties = copy.strappedFifties;
+        loseHundreds = copy.loseHundreds;
+    }
+
 
     // empty constructor for the class to function properly //
     public Spreadsheet() {}
