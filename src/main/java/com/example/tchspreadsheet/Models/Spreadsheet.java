@@ -92,7 +92,7 @@ public class Spreadsheet {
     private long rackedThousands;
 
     @Column
-    private long fiveThousands;
+    private long loseFiveThousands;
 
     @Column
     private long rackedFiveThousands;
@@ -100,6 +100,7 @@ public class Spreadsheet {
 
     // copy constructor //
     public Spreadsheet(Spreadsheet copy) {
+        // cash values
         id = copy.id;
         loseOnes = copy.loseOnes;
         strappedOnes = copy.strappedOnes;
@@ -114,6 +115,23 @@ public class Spreadsheet {
         loseFifties = copy.loseFifties;
         strappedFifties = copy.strappedFifties;
         loseHundreds = copy.loseHundreds;
+
+        // chip values
+        loseOnesChips = copy.loseOnesChips;
+        rackedOnesChips = copy.rackedOnesChips;
+        loseFivesChips = copy.loseFivesChips;
+        rackedFivesChips = copy.rackedFivesChips;
+        loseTwentyFives = copy.loseTwentyFives;
+        rackedTwentyFives = copy.rackedTwentyFives;
+        loseHundredsChips = copy.loseHundredsChips;
+        rackedHundredsChips = copy.rackedHundredsChips;
+        loseFiveHundreds = copy.loseFiveHundreds;
+        rackedFiveHundreds = copy.rackedFiveHundreds;
+        loseThousands = copy.loseThousands;
+        rackedThousands = copy.rackedThousands;
+        loseFiveThousands = copy.loseFiveThousands;
+        rackedFiveThousands = copy.rackedFiveThousands;
+
     }
 
 
