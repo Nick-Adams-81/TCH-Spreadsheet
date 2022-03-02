@@ -23,8 +23,8 @@ public class HomeController {
     @GetMapping("/home")
     public String home(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = userDao.findById(loginUser.getId());
-        model.addAttribute("homepage", user.get());
+        User user = userDao.findById(loginUser.getId());
+        model.addAttribute("homepage", user.getSpreadsheet());
         return "home";
     }
 }

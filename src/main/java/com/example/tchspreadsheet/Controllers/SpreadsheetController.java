@@ -30,7 +30,8 @@ public class SpreadsheetController {
     @GetMapping("/spreadsheet")
     public String spreadsheet(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("homepage", loginUser.getSpreadsheet());
+        User user = userDao.findById(loginUser.getId());
+        model.addAttribute("homepage", user.getSpreadsheet());
         model.addAttribute("spreadsheet", new Spreadsheet());
         return "spreadsheet";
     }
@@ -38,10 +39,11 @@ public class SpreadsheetController {
     @PostMapping("/spreadsheet")
     public String saveSpreadsheet(@ModelAttribute Spreadsheet spreadsheet) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        List<Spreadsheet> spreadsheetList = loginUser.getSpreadsheet();
+        User user = userDao.findById(loginUser.getId());
+        List<Spreadsheet> spreadsheetList = user.getSpreadsheet();
         spreadsheetList.add(spreadsheet);
-        loginUser.setSpreadsheet(spreadsheetList);
-        userDao.save(loginUser);
+        user.setSpreadsheet(spreadsheetList);
+        userDao.save(user);
         return "/spreadsheet";
     }
 }
