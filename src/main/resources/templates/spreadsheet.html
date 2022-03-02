@@ -3,7 +3,7 @@
 <div th:replace="partials.html :: site-head"></div>
 <body>
 <div th:replace="partials.html :: navbar"></div>
-<h1>spreadsheet test</h1>
+
 
 <div class="container">
     <div class="row">
@@ -58,8 +58,19 @@
             </div>
             <br>
             <div class="col">
-
+                $50 <input type="number" th:field="*{loseFifties}"/>
+                <input type="number" th:field="*{strappedFifties}"/>
+                <input type="number" value="N/A"/>
+                <input type="number" value="N/A"/>
             </div>
+            <br>
+            <div class="col">
+                $100 <input type="number" th:field="*{loseHundreds}"/>
+                <input type="number" th:field="*{strappedHundreds}"/>
+                <input type="number" th:field="*{loseHundredsChips}"/>
+                <input type="number" th:field="*{rackedHundredsChips}"/>
+            </div>
+            <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
