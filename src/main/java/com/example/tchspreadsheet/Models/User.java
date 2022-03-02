@@ -48,7 +48,6 @@ public class User {
     private List<Spreadsheet> spreadsheet;
 
 
-
     // getters and setters for users table values
     public long getId() {
         return id;
