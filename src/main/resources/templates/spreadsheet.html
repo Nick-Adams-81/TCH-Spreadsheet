@@ -35,8 +35,19 @@
                 <input type="number" th:field="*{loseFivesChips}"/>
                 <input type="number" th:field="*{rackedFivesChips}"/>
             </div>
+            <br>
             <div class="col">
-                Column
+                $10 <input type="number" th:field="*{loseTens}"/>
+                <input type="number" th:field="*{strappedTens}"/>
+                <input type="number" value="N/A"/>
+                <input type="number" value="N/A"/>
+            </div>
+            <br>
+            <div class="col">
+                $20 <input type="number" th:field="*{loseTwenties}"/>
+                <input type="number" th:field="*{strappedTwenties}"/>
+                <input type="number" value="N/A"/>
+                <input type="number" value="N/A"/>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
