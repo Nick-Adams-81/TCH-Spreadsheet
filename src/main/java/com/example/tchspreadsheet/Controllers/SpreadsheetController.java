@@ -30,8 +30,7 @@ public class SpreadsheetController {
     @GetMapping("/spreadsheet")
     public String spreadsheet(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = userDao.findById(loginUser.getId());
-        model.addAttribute("homepage", user.get());
+        model.addAttribute("homepage", loginUser.getSpreadsheet());
         model.addAttribute("spreadsheet", new Spreadsheet());
         return "spreadsheet";
     }

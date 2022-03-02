@@ -6,7 +6,32 @@
 <h1>spreadsheet test</h1>
 
 <div class="container">
+    <div class="row">
+        <form th:action="@{/spreadsheet}" th:method="post" th:object="${spreadsheet}" id="spreadsheet">
+            <div class="col">
+                <h2>Cash on hand</h2>
+                <span>
+                    <div id="headers"><p>lose</p><p>strapped</p></div>
+                    <input type="number" id="loseOnes" th:field="*{loseOnes}">
+                    <input type="number" id="strappedOnes" th:field="*{strappedOnes}"/>
+                    <p>$5</p>
+                    <input type="number" id="loseFives" th:field="*{loseFives}">
+                    <input type="number" id="strappedFives" th:field="*{strappedFives}"/>
+                </span>
+            </div>
+            <div class="col">
+                Column
+            </div>
+            <div class="col">
+                Column
+            </div>
+            <div class="col">
+                Column
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
+    </div>
 </div>
 </body>
 </html>
