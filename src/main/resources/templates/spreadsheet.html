@@ -25,8 +25,8 @@
             <div class="col">
                 $2 <input type="number" th:field="*{loseTwos}" id="loseTwos"/>
                 <input type="number" th:field="*{strappedTwos}" id="strappedTwos"/>
-                <input type="number" value="N/A"/>
-                <input type="number" value="N/A"/>
+                <input type="number" />
+                <input type="number" />
             </div>
             <br>
             <div class="col">
@@ -95,7 +95,7 @@
             <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
         </form>
 
-        <div>Totals: <span>$150,000</span> <span id="computedTotal"></span></div>
+        <div id="bankTotal">Totals: <span>$150,000</span> <span id="computedTotal"></span></div>
 
     </div>
 </div>
