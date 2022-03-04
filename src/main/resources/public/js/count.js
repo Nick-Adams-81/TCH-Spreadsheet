@@ -14,8 +14,9 @@ submitButton.addEventListener("click", (e) => {
     let loseOnes = document.getElementById("loseOnes").value;
     let strappedOnes = document.getElementById("strappedOnes").value;
 
-    alert(totals(loseOnes, 2));
-    computedTotal.innerHTML = loseOnes;
+    const loseOnesTotal = totals(loseOnes, 1);
+    const strappedOnesTotal = totals(strappedOnes, 100);
+    computedTotal.innerHTML = loseOnesTotal + strappedOnesTotal;
 })
 
 
