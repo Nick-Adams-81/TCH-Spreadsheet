@@ -8,8 +8,8 @@ const totals = (input, multiplier) => {
     return input * multiplier;
 }
 
-const grandTotal = (a, b, c) => {
-    return a + b + c;
+const grandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
+    return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
 
 
@@ -23,20 +23,34 @@ submitButton.addEventListener("click", (e) => {
     let strappedFives = document.getElementById("strappedFives").value;
     let loseTens = document.getElementById("loseTens").value;
     let strappedTens = document.getElementById("strappedTens").value;
-    let loseTwenties = document.getElementById("loseTwenties");
+    let loseTwenties = document.getElementById("loseTwenties").value;
     let strappedTwenties = document.getElementById("strappedTwenties").value;
+    let loseFifties = document.getElementById("loseFifties").value;
+    let strappedFifties = document.getElementById("strappedFifties").value;
     let loseHundreds = document.getElementById("loseHundreds").value;
     let strappedHundreds = document.getElementById("strappedHundreds").value;
     let userTotals = document.getElementById("computedTotal");
-    console.log(loseTwos);
 
+
+    // totals of user cash inputs
     const loseOnesTotal = totals(parseInt(loseOnes), 1);
     const strappedOnesTotal = totals(parseInt(strappedOnes), 100);
     const loseTwosTotal = totals(parseInt(loseTwos), 2);
     const strappedTwosTotal = totals(parseInt(strappedTwos), 200);
     const loseFivesTotal = totals(parseInt(loseFives), 5);
     const strappedFivesTotal = totals(parseInt(strappedFives), 500);
-    const computedTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal);
+    const loseTensTotal = totals(parseInt(loseTens), 10);
+    const strappedTensTotal = totals(parseInt(strappedTens), 1000);
+    const loseTwentiesTotal = totals(parseInt(loseTwenties), 20);
+    const strappedTwentiesTotal = totals(parseInt(strappedTwenties), 2000);
+    const loseFiftiesTotal = totals(parseInt(loseFifties), 50);
+    const strappedFiftiesTotal = totals(parseInt(strappedFifties), 5000)
+    const loseHundredsTotal = totals(parseInt(loseHundreds), 100);
+    const strappedHundredsTotal = totals(parseInt(strappedHundreds), 10000);
+
+    // compute grand total of cash
+    const computedTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
+        loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal, strappedHundredsTotal);
 
     userTotals.innerHTML = ("$" + computedTotal);
 
