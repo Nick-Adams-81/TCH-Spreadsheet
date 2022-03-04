@@ -12,12 +12,12 @@
             <div class="col">
                 <pre>   lose cash           strapped cash      lose chips         racked chips</pre>
                 <span>
-                    $1 <input type="number" th:field="*{loseOnes}"/>
-                       <input type="number" th:field="*{strappedOnes}"/>
+                    $1 <input type="number" th:field="*{loseOnes}" id="loseOnes"/>
+                       <input type="number" th:field="*{strappedOnes}" id="strappedOnes"/>
                 </span>
                 <span>
-                    <input type="number" th:field="*{loseOnesChips}"/>
-                    <input type="number" th:field="*{rackedOnesChips}"/>
+                    <input type="number" th:field="*{loseOnesChips}" id="loseOnesChips"/>
+                    <input type="number" th:field="*{rackedOnesChips}" id="rackedOnesChips"/>
                 </span>
 
             </div>
@@ -97,5 +97,6 @@
 
     </div>
 </div>
+<script src="../public/js/count.js"></script>
 </body>
 </html>
