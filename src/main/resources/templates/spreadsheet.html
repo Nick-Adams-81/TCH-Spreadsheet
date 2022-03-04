@@ -12,8 +12,8 @@
             <div class="col">
                 <pre>   lose cash           strapped cash      lose chips         racked chips</pre>
                 <span>
-                    $1 <input type="number" th:field="*{loseOnes}" id="loseOnes"/>
-                       <input type="number" th:field="*{strappedOnes}" id="strappedOnes"/>
+                    $1 <input type="number" th:field="*{loseOnes}" id="loseOnes" vlaue=""/>
+                       <input type="number" th:field="*{strappedOnes}" id="strappedOnes" value=""/>
                 </span>
                 <span>
                     <input type="number" th:field="*{loseOnesChips}" id="loseOnesChips"/>
@@ -92,8 +92,10 @@
                 <input type="number" th:field="*{rackedFiveThousands}" id="rackedFiveThousands"/>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
         </form>
+
+        <div>Totals: <span>$150,000</span> <span id="computedTotal"></span></div>
 
     </div>
 </div>
