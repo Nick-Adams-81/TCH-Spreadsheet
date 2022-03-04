@@ -2,6 +2,7 @@
 
 let submitButton = document.getElementById("submitButton");
 let userTotals = document.getElementById("computedTotal");
+let bankTotal = document.getElementById("bankTotal");
 const totals = (input, multiplier) => {
     return parseInt(input) * multiplier;
 }
@@ -10,9 +11,11 @@ const grandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
 
-
+const bankGrandTotal = "$18,988";
+bankTotal.innerHTML = bankGrandTotal;
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
+
 
     // getting inputted value from users
     let loseOnes = document.getElementById("loseOnes").value;
@@ -48,11 +51,12 @@ submitButton.addEventListener("click", (e) => {
     const strappedHundredsTotal = totals(strappedHundreds, 10000);
 
     // compute grand total of cash
-    const computedTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
+    const computedCashTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal,
         strappedHundredsTotal);
 
-    userTotals.innerHTML = ("$" + computedTotal);
+
+    userTotals.innerHTML = ("$" + computedCashTotal);
 
 });
 
