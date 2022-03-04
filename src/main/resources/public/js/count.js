@@ -11,6 +11,7 @@ const grandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
 
+// setting bank total manually, later will be set dynamically
 const bankGrandTotal = "$18,988";
 bankTotal.innerHTML = bankGrandTotal;
 submitButton.addEventListener("click", (e) => {
