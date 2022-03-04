@@ -52,7 +52,7 @@ submitButton.addEventListener("click", (e) => {
     const computedTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal, strappedHundredsTotal);
 
-    userTotals.innerHTML = ("$" + computedTotal);
+    userTotals.innerHTML = ("Computed total: " + "$" + computedTotal);
 
 });
 
