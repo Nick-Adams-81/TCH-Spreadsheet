@@ -7,8 +7,12 @@ const totals = (input, multiplier) => {
     return parseInt(input) * multiplier;
 }
 
-const grandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
+const cashGrandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
+}
+
+const chipGrandTotal = (a, b, c, d, e, f, g, h, i, j, k, l ,m) => {
+    return a + b + c + d + e + f + g + h + i + j + k + l + m;
 }
 
 // setting bank total manually, later will be set dynamically
@@ -18,7 +22,7 @@ submitButton.addEventListener("click", (e) => {
     e.preventDefault();
 
 
-    // getting inputted value from users
+    // getting inputted cash value from users
     let loseOnes = document.getElementById("loseOnes").value;
     let strappedOnes = document.getElementById("strappedOnes").value;
     let loseTwos = document.getElementById("loseTwos").value;
@@ -33,6 +37,21 @@ submitButton.addEventListener("click", (e) => {
     let strappedFifties = document.getElementById("strappedFifties").value;
     let loseHundreds = document.getElementById("loseHundreds").value;
     let strappedHundreds = document.getElementById("strappedHundreds").value;
+
+    // getting inputted chip values from users
+    let loseOnesChips = document.getElementById("loseOnesChips").value;
+    let rackedOnesChips = document.getElementById("rackedOnesChips").value;
+    let loseFivesChips = document.getElementById("loseFivesChips").value;
+    let rackedFivesChips = document.getElementById("rackedFivesChips").value;
+    let loseTwentyFiveChips = document.getElementById("loseTwentyFives").value;
+    let rackedTwentyFiveChips = document.getElementById("rackedTwentyFives").value;
+    let loseHundredsChips = document.getElementById("loseHundreds").value;
+    let rackedHundredChips = document.getElementById("rackedHundredsChips").value;
+    let loseFiveHundreds = document.getElementById("loseFiveHundreds").value;
+    let rackedFiveHundreds = document.getElementById("rackedFiveHundreds").value;
+    let loseThousands = document.getElementById("loseThousands").value;
+    let rackedThousands = document.getElementById("rackedThousands").value;
+    let fiveThousands = document.getElementById("fiveThousands").value;
 
 
     // totals of user cash inputs
@@ -51,11 +70,15 @@ submitButton.addEventListener("click", (e) => {
     const loseHundredsTotal = totals(loseHundreds, 100);
     const strappedHundredsTotal = totals(strappedHundreds, 10000);
 
+    // totals of user chip inputs
+
+
     // compute grand total of cash
-    const computedCashTotal = grandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
+    const computedCashTotal = cashGrandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal,
         strappedHundredsTotal);
 
+    const computedChipTotal = chipGrandTotal()
 
     userTotals.innerHTML = ("$" + computedCashTotal);
 
