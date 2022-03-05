@@ -71,6 +71,20 @@ submitButton.addEventListener("click", (e) => {
     const strappedHundredsTotal = totals(strappedHundreds, 10000);
 
     // totals of user chip inputs
+    const loseOnesChipsTotal = totals(loseOnesChips, 1);
+    const rackedOnesChipsTotal = totals(rackedOnesChips, 100);
+    const loseFivesChipsTotal = totals(loseFivesChips, 5);
+    const rackedFivesChipsTotal = totals(rackedFivesChips, 500);
+    const loseTwentyFiveChipsTotal = totals(loseTwentyFiveChips, 25);
+    const rackedTwentyFiveChipsTotal = totals(rackedTwentyFiveChips, 2500);
+    const loseHundredChipTotal = totals(loseHundredsChips, 100);
+    const rackedHundredChipTotal = totals(rackedHundredChips, 10000);
+    const loseFiveHundredChipTotal = totals(loseFiveHundreds, 500);
+    const rackedFiveHundredsTotal = totals(rackedFiveHundreds, 50000);
+    const loseThousandsTotal = totals(loseThousands, 1000);
+    const rackedThousandsTotal = totals(rackedThousands, 100000);
+    const fiveThousandTotal = totals(fiveThousands, 5000);
+
 
 
     // compute grand total of cash
@@ -78,9 +92,13 @@ submitButton.addEventListener("click", (e) => {
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal,
         strappedHundredsTotal);
 
-    const computedChipTotal = chipGrandTotal()
+    const computedChipTotal = chipGrandTotal(loseOnesChipsTotal, rackedOnesChipsTotal, loseFivesChipsTotal, rackedFivesChipsTotal, loseTwentyFiveChipsTotal,
+        rackedTwentyFiveChipsTotal, loseHundredChipTotal, rackedHundredChipTotal, loseFiveHundredChipTotal, rackedFiveHundredsTotal, loseThousandsTotal, rackedThousandsTotal,
+        fiveThousandTotal);
 
-    userTotals.innerHTML = ("$" + computedCashTotal);
+    const grandTotal = computedCashTotal + computedChipTotal;
+
+    userTotals.innerHTML = ("$" + grandTotal);
 
 });
 
