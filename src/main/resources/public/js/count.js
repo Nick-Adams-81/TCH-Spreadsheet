@@ -68,7 +68,7 @@ submitButton.addEventListener("click", (e) => {
     const strappedTwentiesTotal = totals(strappedTwenties, 2000);
     const loseFiftiesTotal = totals(loseFifties, 50);
     const strappedFiftiesTotal = totals(strappedFifties, 5000);
-    const loseHundredsTotal = totals(loseHundreds, 100);
+    const loseHundredsTotal = totals(loseHundreds, 0);
     const strappedHundredsTotal = totals(strappedHundreds, 10000);
 
     // totals of user chip inputs
