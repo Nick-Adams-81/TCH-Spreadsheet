@@ -105,9 +105,18 @@ submitButton.addEventListener("click", (e) => {
     // adding both chips and cash totals together
     const grandTotal = computedCashTotal + computedChipTotal;
 
-    console.log(typeof grandTotal);
     // setting html to grand total of chips and cash
-    userTotals.value = (grandTotal);
+    if(grandTotal === bankGrandTotal) {
+        userTotals.value = grandTotal;
+        userTotals.style.color = "green";
+    } else if(grandTotal < bankGrandTotal) {
+        userTotals.value = grandTotal;
+        userTotals.style.color = "red";
+    } else {
+        userTotals.value = grandTotal;
+        userTotals.style.color = "#FFC000";
+    }
+
 
 });
 
