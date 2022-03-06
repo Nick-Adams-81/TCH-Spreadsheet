@@ -98,6 +98,12 @@ public class Spreadsheet {
     @Column
     private long rackedFiveThousands;
 
+    @Column
+    private long targetTotal;
+
+    @Column
+    private long boxTotal;
+
 
     // copy constructor //
     public Spreadsheet(Spreadsheet copy) {
@@ -132,6 +138,10 @@ public class Spreadsheet {
         rackedThousands = copy.rackedThousands;
         loseFiveThousands = copy.loseFiveThousands;
         rackedFiveThousands = copy.rackedFiveThousands;
+
+        // totals copy constructor
+        targetTotal = copy.targetTotal;
+        boxTotal = copy.boxTotal;
 
     }
 
@@ -383,4 +393,27 @@ public class Spreadsheet {
         this.rackedFiveThousands = rackedFiveThousands;
     }
 
+    public long getLoseFiveThousands() {
+        return loseFiveThousands;
+    }
+
+    public void setLoseFiveThousands(long loseFiveThousands) {
+        this.loseFiveThousands = loseFiveThousands;
+    }
+
+    public long getTargetTotal() {
+        return targetTotal;
+    }
+
+    public void setTargetTotal(long targetTotal) {
+        this.targetTotal = targetTotal;
+    }
+
+    public long getBoxTotal() {
+        return boxTotal;
+    }
+
+    public void setBoxTotal(long boxTotal) {
+        this.boxTotal = boxTotal;
+    }
 }
