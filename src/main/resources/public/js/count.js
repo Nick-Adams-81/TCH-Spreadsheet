@@ -94,12 +94,15 @@ submitButton.addEventListener("click", (e) => {
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal,
         strappedHundredsTotal);
 
+    // compute grand total of chips
     const computedChipTotal = chipGrandTotal(loseOnesChipsTotal, rackedOnesChipsTotal, loseFivesChipsTotal, rackedFivesChipsTotal, loseTwentyFiveChipsTotal,
         rackedTwentyFiveChipsTotal, loseHundredChipTotal, rackedHundredChipTotal, loseFiveHundredChipTotal, rackedFiveHundredsTotal, loseThousandsTotal, rackedThousandsTotal,
         fiveThousandTotal, rackedFiveThousandsTotal);
 
+    // adding both chips and cash totals together
     const grandTotal = computedCashTotal + computedChipTotal;
 
+    // setting html to grand total of chips and cash
     userTotals.innerHTML = ("$" + grandTotal);
 
 });
