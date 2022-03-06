@@ -18,8 +18,8 @@ const chipGrandTotal = (a, b, c, d, e, f, g, h, i, j, k, l ,m, n) => {
 }
 
 // setting bank total manually, later will be set dynamically
-const bankGrandTotal = "$18,988";
-bankTotal.innerHTML = bankGrandTotal;
+const bankGrandTotal = 18988;
+bankTotal.value = bankGrandTotal;
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -105,8 +105,9 @@ submitButton.addEventListener("click", (e) => {
     // adding both chips and cash totals together
     const grandTotal = computedCashTotal + computedChipTotal;
 
+    console.log(typeof grandTotal);
     // setting html to grand total of chips and cash
-    userTotals.innerHTML = ("$" + grandTotal);
+    userTotals.value = (grandTotal);
 
 });
 

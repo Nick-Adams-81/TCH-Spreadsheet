@@ -92,11 +92,15 @@
                 <input type="number" th:field="*{rackedFiveThousands}" id="rackedFiveThousands" required/>
             </div>
             <br>
+            <div>Total: <input id="bankTotal" th:field="*{targetTotal}" />
+                Computed total: <input id="computedTotal"  th:field="*{boxTotal}"/>
+            </div>
             <button id="submitButton">Calculate</button>
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
 
-        <div>Total: <span id="bankTotal"></span>  Computed total: <span id="computedTotal"></span></div>
+
 
     </div>
 </div>
