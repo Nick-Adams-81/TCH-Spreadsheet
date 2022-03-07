@@ -47,6 +47,14 @@ public class User {
     )
     private List<Spreadsheet> spreadsheet;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_dealerTokes_bridge",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "dealerTokes_id")}
+    )
+    private List<DealerTokes> dealerTokes;
+
 
     // getters and setters for users table values
     public long getId() {
@@ -63,6 +71,14 @@ public class User {
 
     public void setSpreadsheet(List<Spreadsheet> spreadsheet) {
         this.spreadsheet = spreadsheet;
+    }
+
+    public List<DealerTokes> getDealerTokes() {
+        return dealerTokes;
+    }
+
+    public void setDealerTokes(List<DealerTokes> dealerTokes) {
+        this.dealerTokes = dealerTokes;
     }
 
     public String getUsername() {

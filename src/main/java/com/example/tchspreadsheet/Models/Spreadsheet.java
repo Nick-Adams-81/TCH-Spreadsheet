@@ -152,6 +152,14 @@ public class Spreadsheet {
     @ManyToMany(mappedBy = "spreadsheet")
     private List<User> user;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "spreadsheet_dealerTokes_bridge",
+            joinColumns = {@JoinColumn(name = "spreadsheet_id")},
+            inverseJoinColumns = {@JoinColumn(name = "dealerTokes_id")}
+    )
+    private  List<DealerTokes> dealerTokes;
+
     // getters and setters //
     public long getId() {
         return id;
@@ -167,6 +175,14 @@ public class Spreadsheet {
 
     public void setUser(List<User> user) {
         this.user = user;
+    }
+
+    public List<DealerTokes> getDealerTokes() {
+        return dealerTokes;
+    }
+
+    public void setDealerTokes(List<DealerTokes> dealerTokes) {
+        this.dealerTokes = dealerTokes;
     }
 
     public long getLoseOnes() {

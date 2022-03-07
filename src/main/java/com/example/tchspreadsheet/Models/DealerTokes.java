@@ -4,6 +4,7 @@ package com.example.tchspreadsheet.Models;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "dealerTokes")
@@ -30,6 +31,18 @@ public class DealerTokes {
         dealerTakeHomeTotal = copy.dealerTakeHomeTotal;
     }
 
+    public DealerTokes() {}
+
+    @ManyToMany(mappedBy = "dealerTokes")
+    private List<User> user;
+
+    public List<User> getUser() {
+        return user;
+    }
+
+    public void setUser(List<User> user) {
+        this.user = user;
+    }
 
     public long getId() {
         return id;
