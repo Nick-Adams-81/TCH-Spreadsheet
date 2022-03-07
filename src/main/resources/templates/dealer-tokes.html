@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="partials.html :: site-head"></div>
+<body>
+<div th:replace="partials.html :: navbar"></div>
+
+<div class="col-sm-6">
+    <h2>Dealer Tokes</h2>
+    <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">
+        Total tokes: <input type="number" th:field="*{totalTokes}"/>
+        After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}"/>
+        12% total: <input type="number" th:field="*{twelvePercentTotal}"/>
+        <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>
+<script src="/js/dealerTokesCalculator.js"></script>
+</body>
+</html>

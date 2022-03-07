@@ -112,24 +112,23 @@
 
         </form>
 
-
     </div>
     <br>
     <br>
-    <div class="col-sm-6">
-        <h2>Dealer Tokes</h2>
-        <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">
-            Total tokes: <input type="number" th:field="*{totalTokes}"/>
-            After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}"/>
-            12% total: <input type="number" th:field="*{twelvePercentTotal}"/>
-            <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
-            <button type="submit" class="btn btn-success">Submit</button>
+<!--    <div class="col-sm-6">-->
+<!--        <h2>Dealer Tokes</h2>-->
+<!--        <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">-->
+<!--            Total tokes: <input type="number" th:field="*{totalTokes}"/>-->
+<!--            After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}"/>-->
+<!--            12% total: <input type="number" th:field="*{twelvePercentTotal}"/>-->
+<!--            <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>-->
+<!--            <button type="submit" class="btn btn-success">Submit</button>-->
 
-        </form>
-    </div>
+<!--        </form>-->
+<!--    </div>-->
 
 </div>
 <script src="/js/boxCount.js"></script>
-<script src="/js/dealerTokesCalculator.js"></script>
+
 </body>
 </html>

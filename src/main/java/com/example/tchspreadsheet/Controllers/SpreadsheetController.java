@@ -52,14 +52,14 @@ public class SpreadsheetController {
         return "/spreadsheet";
     }
 
-    @PostMapping("/dealerTokes")
-    public String dealerTokes(@ModelAttribute DealerTokes dealerTokes) {
-        User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User user = userDao.findById(loginUser.getId());
-        List<DealerTokes> dealerTokesList = user.getDealerTokes();
-        dealerTokesList.add(dealerTokes);
-        user.setDealerTokes(dealerTokesList);
-        userDao.save(user);
-        return "redirect:/spreadsheet";
-    }
+//    @PostMapping("/dealerTokes")
+//    public String dealerTokes(@ModelAttribute DealerTokes dealerTokes) {
+//        User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        User user = userDao.findById(loginUser.getId());
+//        List<DealerTokes> dealerTokesList = user.getDealerTokes();
+//        dealerTokesList.add(dealerTokes);
+//        user.setDealerTokes(dealerTokesList);
+//        userDao.save(user);
+//        return "/spreadsheet";
+//    }
 }
