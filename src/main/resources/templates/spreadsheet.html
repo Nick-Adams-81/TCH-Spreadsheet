@@ -10,7 +10,7 @@
 
 
         <form th:action="@{/spreadsheet}" th:method="post" th:object="${spreadsheet}" id="spreadsheet">
-            <div class="col-sm-5">
+            <div class="col-sm-5" style="float:left; margin-right:15px;">
                 <h3>Cash on hand(In Units)</h3>
                 <div class="col">
                     <pre>   lose cash           strapped cash      </pre>
@@ -18,7 +18,6 @@
                     $1 <input type="number" th:field="*{loseOnes}" id="loseOnes" vlaue="" required/>
                        <input type="number" th:field="*{strappedOnes}" id="strappedOnes" value="" required/>
                 </span>
-
 
                 </div>
                 <br>
@@ -63,9 +62,11 @@
 
             </div>
 
+
             <div class="col-sm-5">
                 <h3>Chips on Hand(in units)</h3>
 
+                <pre>   lose chips         racked Chips      </pre>
                 <div class="col">
                     $1 <input type="number" th:field="*{loseOnesChips}" id="loseOnesChips" required/>
                     <input type="number" th:field="*{rackedOnesChips}" id="rackedOnesChips" required/>
@@ -103,7 +104,7 @@
 
                 <br>
             </div>
-            <div>Total: <input id="bankTotal" th:field="*{targetTotal}"/>
+            <div style="margin-top:30px;">Total: <input id="bankTotal" th:field="*{targetTotal}"/>
                 Computed total: <input id="computedTotal" th:field="*{boxTotal}"/>
             </div>
             <button id="submitButton" class="btn btn-success">Calculate</button>

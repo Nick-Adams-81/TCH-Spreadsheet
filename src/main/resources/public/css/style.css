@@ -8,3 +8,7 @@
     display: flex;
     background-color: green;
 }
+
+#spreadsheet {
+    display: inline;
+}
