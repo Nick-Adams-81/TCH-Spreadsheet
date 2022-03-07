@@ -7,100 +7,116 @@
 
 <div class="container">
     <div class="row">
+
+
         <form th:action="@{/spreadsheet}" th:method="post" th:object="${spreadsheet}" id="spreadsheet">
-            <h3>Cash on hand(In Units)</h3>
-            <div class="col">
-                <pre>   lose cash           strapped cash      lose chips         racked chips</pre>
-                <span>
+            <div class="col-sm-5">
+                <h3>Cash on hand(In Units)</h3>
+                <div class="col">
+                    <pre>   lose cash           strapped cash      </pre>
+                    <span>
                     $1 <input type="number" th:field="*{loseOnes}" id="loseOnes" vlaue="" required/>
                        <input type="number" th:field="*{strappedOnes}" id="strappedOnes" value="" required/>
                 </span>
-                <span>
-                    <input type="number" th:field="*{loseOnesChips}" id="loseOnesChips" required/>
-                    <input type="number" th:field="*{rackedOnesChips}" id="rackedOnesChips" required/>
-                </span>
+
+
+                </div>
+                <br>
+                <div class="col">
+                    $2 <input type="number" th:field="*{loseTwos}" id="loseTwos" required/>
+                    <input type="number" th:field="*{strappedTwos}" id="strappedTwos" required/>
+
+                </div>
+                <br>
+                <div class="col">
+                    $5 <input type="number" th:field="*{loseFives}" id="loseFives" required/>
+                    <input type="number" th:field="*{strappedFives}" id="strappedFives" required/>
+
+                </div>
+                <br>
+                <div class="col">
+                    $10 <input type="number" th:field="*{loseTens}" id="loseTens" required/>
+                    <input type="number" th:field="*{strappedTens}" id="strappedTens" required/>
+
+                </div>
+                <br>
+                <div class="col">
+                    $20 <input type="number" th:field="*{loseTwenties}" id="loseTwenties" required/>
+                    <input type="number" th:field="*{strappedTwenties}" id="strappedTwenties" required/>
+
+                </div>
+                <br>
+
+                <div class="col">
+                    $50 <input type="number" th:field="*{loseFifties}" id="loseFifties" required/>
+                    <input type="number" th:field="*{strappedFifties}" id="strappedFifties" required/>
+
+                </div>
+                <br>
+                <div class="col">
+                    $100 <input type="number" th:field="*{loseHundreds}" id="loseHundreds" required/>
+                    <input type="number" th:field="*{strappedHundreds}" id="strappedHundreds" required/>
+
+                </div>
+
+                <br>
 
             </div>
-            <br>
-            <div class="col">
-                $2 <input type="number" th:field="*{loseTwos}" id="loseTwos" required/>
-                <input type="number" th:field="*{strappedTwos}" id="strappedTwos" required/>
-                <input type="number" />
-                <input type="number" />
+
+            <div class="col-sm-5">
+                <h3>Chips on Hand(in units)</h3>
+
+                <div class="col">
+                    $1 <input type="number" th:field="*{loseOnesChips}" id="loseOnesChips" required/>
+                    <input type="number" th:field="*{rackedOnesChips}" id="rackedOnesChips" required/>
+                </div>
+                <br>
+                <div class="col">
+                    $5 <input type="number" th:field="*{loseFivesChips}" id="loseFivesChips" required/>
+                    <input type="number" th:field="*{rackedFivesChips}" id="rackedFivesChips" required/>
+                </div>
+                <br>
+                <div class="col">
+                    $25<input type="number" th:field="*{loseTwentyFives}" id="loseTwentyFives" required/>
+                    <input type="number" th:field="*{rackedTwentyFives}" id="rackedTwentyFives" required/>
+                </div>
+                <br>
+                <div class="col">
+                    $100<input type="number" th:field="*{loseHundredsChips}" id="loseHundredsChips" required/>
+                    <input type="number" th:field="*{rackedHundredsChips}" id="rackedHundredsChips" required/>
+                </div>
+                <br>
+                <div class="col">
+                    $500<input type="number" th:field="*{loseFiveHundreds}" id="loseFiveHundreds" required/>
+                    <input type="number" th:field="*{rackedFiveHundreds}" id="rackedFiveHundreds" required/>
+                </div>
+                <br>
+                <div class="col">
+                    $1K<input type="number" th:field="*{loseThousands}" id="loseThousands" required/>
+                    <input type="number" th:field="*{rackedThousands}" id="rackedThousands" required/>
+                </div>
+                <br>
+                <div classs="col">
+                    $5K<input type="number" th:field="*{fiveThousands}" id="fiveThousands" required/>
+                    <input type="number" th:field="*{rackedFiveThousands}" id="rackedFiveThousands" required/>
+                </div>
+
+                <br>
             </div>
-            <br>
-            <div class="col">
-                $5 <input type="number" th:field="*{loseFives}" id="loseFives" required/>
-                <input type="number" th:field="*{strappedFives}" id="strappedFives" required/>
-                <input type="number" th:field="*{loseFivesChips}" id="loseFivesChips" required/>
-                <input type="number" th:field="*{rackedFivesChips}" id="rackedFivesChips" required/>
-            </div>
-            <br>
-            <div class="col">
-                $10 <input type="number" th:field="*{loseTens}" id="loseTens" required/>
-                <input type="number" th:field="*{strappedTens}" id="strappedTens" required/>
-                <input type="number" value=""/>
-                <input type="number" value=""/>
-            </div>
-            <br>
-            <div class="col">
-                $20 <input type="number" th:field="*{loseTwenties}" id="loseTwenties" required/>
-                <input type="number" th:field="*{strappedTwenties}" id="strappedTwenties" required/>
-                <input type="number" value=""/>
-                <input type="number" value=""/>
-            </div>
-            <br>
-            <div class="col">
-                $25 <input type="number" value=""/>
-                <input type="number" value=""/>
-                <input type="number" th:field="*{loseTwentyFives}" id="loseTwentyFives" required/>
-                <input type="number" th:field="*{rackedTwentyFives}" id="rackedTwentyFives" required/>
-            </div>
-            <br>
-            <div class="col">
-                $50 <input type="number" th:field="*{loseFifties}" id="loseFifties" required/>
-                <input type="number" th:field="*{strappedFifties}" id="strappedFifties" required/>
-                <input type="number" value=""/>
-                <input type="number" value=""/>
-            </div>
-            <br>
-            <div class="col">
-                $100 <input type="number" th:field="*{loseHundreds}" id="loseHundreds" required/>
-                <input type="number" th:field="*{strappedHundreds}" id="strappedHundreds" required/>
-                <input type="number" th:field="*{loseHundredsChips}" id="loseHundredsChips" required/>
-                <input type="number" th:field="*{rackedHundredsChips}" id="rackedHundredsChips" required/>
-            </div>
-            <br>
-            <div class="col">
-                $500 <input type="number" value=""/>
-                <input type="number" value=""/>
-                <input type="number" th:field="*{loseFiveHundreds}" id="loseFiveHundreds" required/>
-                <input type="number" th:field="*{rackedFiveHundreds}" id="rackedFiveHundreds" required/>
-            </div>
-            <br>
-            <div class="col">
-                $1K <input type="number" value=""/>
-                <input type="number" value=""/>
-                <input type="number" th:field="*{loseThousands}" id="loseThousands" required/>
-                <input type="number" th:field="*{rackedThousands}" id="rackedThousands" required/>
-            </div>
-            <br>
-            <div classs="col">
-                $5K <input type="number" value=""/>
-                <input type="number" value=""/>
-                <input type="number" th:field="*{fiveThousands}" id="fiveThousands" required/>
-                <input type="number" th:field="*{rackedFiveThousands}" id="rackedFiveThousands" required/>
-            </div>
-            <br>
-            <div>Total: <input id="bankTotal" th:field="*{targetTotal}" />
-                Computed total: <input id="computedTotal"  th:field="*{boxTotal}"/>
+            <div>Total: <input id="bankTotal" th:field="*{targetTotal}"/>
+                Computed total: <input id="computedTotal" th:field="*{boxTotal}"/>
             </div>
             <button id="submitButton" class="btn btn-success">Calculate</button>
             <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
-        <br>
-        <br>
+
+
+    </div>
+    <br>
+    <br>
+    <div class="col-sm-6">
+        <h2>Dealer Tokes</h2>
         <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">
             Total tokes: <input type="number" th:field="*{totalTokes}"/>
             After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}"/>
@@ -109,11 +125,10 @@
             <button type="submit" class="btn btn-success">Submit</button>
 
         </form>
-
-
-
     </div>
+
 </div>
 <script src="/js/boxCount.js"></script>
+<script src="/js/dealerTokesCalculator.js"></script>
 </body>
 </html>
