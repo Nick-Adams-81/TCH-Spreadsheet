@@ -36,12 +36,28 @@ public class DealerTokes {
     @ManyToMany(mappedBy = "dealerTokes")
     private List<User> user;
 
+    @ManyToMany
+    @JoinTable(
+            name = "dealerTokes_spreadsheet_bridge",
+            joinColumns = {@JoinColumn(name = "dealerTokes_id")},
+            inverseJoinColumns = {@JoinColumn(name = "spreadsheet_id")}
+    )
+    private List<Spreadsheet> spreadsheet;
+
     public List<User> getUser() {
         return user;
     }
 
     public void setUser(List<User> user) {
         this.user = user;
+    }
+
+    public List<Spreadsheet> getSpreadsheet() {
+        return spreadsheet;
+    }
+
+    public void setSpreadsheet(List<Spreadsheet> spreadsheet) {
+        this.spreadsheet = spreadsheet;
     }
 
     public long getId() {
