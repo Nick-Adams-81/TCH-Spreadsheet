@@ -1,4 +1,5 @@
 "use strict";
+
 // global id's
 let submitButton = document.getElementById("submitButton");
 let userTotals = document.getElementById("computedTotal");

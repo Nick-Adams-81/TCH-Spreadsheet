@@ -1,8 +1,10 @@
 package com.example.tchspreadsheet.Controllers;
 
 
+import com.example.tchspreadsheet.Models.DealerTokes;
 import com.example.tchspreadsheet.Models.Spreadsheet;
 import com.example.tchspreadsheet.Models.User;
+import com.example.tchspreadsheet.Repositories.DealerTokesRepository;
 import com.example.tchspreadsheet.Repositories.SpreadsheetRepository;
 import com.example.tchspreadsheet.Repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,12 +20,14 @@ import java.util.List;
 @Controller
 public class SpreadsheetController {
 
-    private  UserRepository userDao;
-    private  SpreadsheetRepository spreadsheetDao;
+    private  final UserRepository userDao;
+    private  final SpreadsheetRepository spreadsheetDao;
+    private  final DealerTokesRepository dealerTokesDao;
 
-    public SpreadsheetController(UserRepository userDao, SpreadsheetRepository spreadsheetDao) {
+    public SpreadsheetController(UserRepository userDao, SpreadsheetRepository spreadsheetDao, DealerTokesRepository dealerTokesDao) {
         this.userDao = userDao;
         this.spreadsheetDao = spreadsheetDao;
+        this.dealerTokesDao = dealerTokesDao;
     }
 
 
@@ -33,7 +37,8 @@ public class SpreadsheetController {
         User user = userDao.findById(loginUser.getId());
         model.addAttribute("homepage", user.getSpreadsheet());
         model.addAttribute("spreadsheet", new Spreadsheet());
-        return "spreadsheet";
+        model.addAttribute("dealerTokes", new DealerTokes());
+        return "/spreadsheet";
     }
 
     @PostMapping("/spreadsheet")
