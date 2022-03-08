@@ -10,7 +10,7 @@
         <form th:action="@{/spreadsheet}" th:method="post" th:object="${spreadsheet}">
             <div id="spreadsheet">
                 <div class="col-sm-5">
-                    <h3>Cash on hand(In Units)</h3>
+                    <h3 id="cash-header">Cash on hand(In Units)</h3>
                     <div class="col">
                         <pre>   lose cash           strapped cash      </pre>
                         <span>
@@ -63,7 +63,7 @@
 
 
                 <div class="col-sm-5">
-                    <h3>Chips on Hand(in units)</h3>
+                    <h3 id="chips-header">Chips on Hand(in units)</h3>
 
                     <pre>   lose chips         racked Chips      </pre>
                     <div class="col">

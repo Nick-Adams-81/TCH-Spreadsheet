@@ -53,3 +53,15 @@
 #fiveThousands {
     margin-left: 9px;
 }
+
+#cash-header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#chips-header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
