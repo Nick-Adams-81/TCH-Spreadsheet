@@ -4,11 +4,52 @@
     box-sizing: border-box
 }
 
-#headers {
-    display: flex;
-    background-color: green;
-}
 
 #spreadsheet {
-    display: inline;
+    display: flex;
+    margin-left: 65px;
+}
+
+#loseOnes {
+    margin-left: 11px;
+}
+
+#loseTwos {
+    margin-left: 11px;
+}
+
+#loseFives {
+    margin-left: 11px;
+}
+
+#loseTens {
+    margin-left: 3px;
+}
+
+#loseTwenties {
+    margin-left: 3px;
+}
+
+#loseFifties {
+    margin-left: 3px;
+}
+
+#loseOnesChips {
+    margin-left: 13px;
+}
+
+#loseFivesChips {
+    margin-left: 13px;
+}
+
+#loseTwentyFives {
+    margin-left: 7px;
+}
+
+#loseThousands {
+    margin-left: 9px;
+}
+
+#fiveThousands {
+    margin-left: 9px;
 }
