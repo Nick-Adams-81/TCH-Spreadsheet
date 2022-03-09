@@ -10,7 +10,7 @@
         <form th:action="@{/spreadsheet}" th:method="post" th:object="${spreadsheet}">
             <div id="spreadsheet">
                 <div class="col-sm-5">
-                    <h3 id="cash-header">Cash on hand(In Units)</h3>
+                    <h3 id="cash-header">Cash on Hand(In Units)</h3>
                     <div class="col">
                         <pre>   lose cash           strapped cash      </pre>
                         <span>
@@ -52,7 +52,7 @@
                     </div>
                     <br>
                     <div class="col">
-                        $100<input type="number" th:field="*{loseHundreds}" id="loseHundreds" required/>
+                        $100 <input type="number" th:field="*{loseHundreds}" id="loseHundreds" required/>
                         <input type="number" th:field="*{strappedHundreds}" id="strappedHundreds" required/>
 
                     </div>
@@ -63,7 +63,7 @@
 
 
                 <div class="col-sm-5">
-                    <h3 id="chips-header">Chips on Hand(in units)</h3>
+                    <h3 id="chips-header">Chips on Hand(In Units)</h3>
 
                     <pre>   lose chips         racked Chips      </pre>
                     <div class="col">
@@ -82,22 +82,22 @@
                     </div>
                     <br>
                     <div class="col">
-                        $100<input type="number" th:field="*{loseHundredsChips}" id="loseHundredsChips" required/>
+                        $100 <input type="number" th:field="*{loseHundredsChips}" id="loseHundredsChips" required/>
                         <input type="number" th:field="*{rackedHundredsChips}" id="rackedHundredsChips" required/>
                     </div>
                     <br>
                     <div class="col">
-                        $500<input type="number" th:field="*{loseFiveHundreds}" id="loseFiveHundreds" required/>
+                        $500 <input type="number" th:field="*{loseFiveHundreds}" id="loseFiveHundreds" required/>
                         <input type="number" th:field="*{rackedFiveHundreds}" id="rackedFiveHundreds" required/>
                     </div>
                     <br>
                     <div class="col">
-                        $1K<input type="number" th:field="*{loseThousands}" id="loseThousands" required/>
+                        $1K <input type="number" th:field="*{loseThousands}" id="loseThousands" required/>
                         <input type="number" th:field="*{rackedThousands}" id="rackedThousands" required/>
                     </div>
                     <br>
                     <div classs="col">
-                        $5K<input type="number" th:field="*{fiveThousands}" id="fiveThousands" required/>
+                        $5K <input type="number" th:field="*{fiveThousands}" id="fiveThousands" required/>
                         <input type="number" th:field="*{rackedFiveThousands}" id="rackedFiveThousands" required/>
                     </div>
 
@@ -106,11 +106,16 @@
 
             </div>
 
-            <div style="margin-top:30px;">Total: <input id="bankTotal" th:field="*{targetTotal}"/>
+            <div id="totals">
+                Total: <input id="bankTotal" th:field="*{targetTotal}"/>
                 Computed total: <input id="computedTotal" th:field="*{boxTotal}"/>
             </div>
-            <button id="submitButton" class="btn btn-success">Calculate</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div id="buttons">
+                <button id="submitButton" class="btn btn-success">Calculate</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
 
         </form>
 

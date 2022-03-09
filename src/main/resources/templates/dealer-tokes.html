@@ -4,15 +4,14 @@
 <body>
 <div th:replace="partials.html :: navbar"></div>
 
-<div class="col-sm-6">
-    <h2>Dealer Tokes</h2>
+<div class="col-sm-12">
+    <h1 id="cash-header">Dealer Tokes</h1>
     <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">
         Total tokes: <input type="number" th:field="*{totalTokes}" id="totalTokes"/>
         After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
         12% total: <input type="number" th:field="*{twelvePercentTotal}" id="twelvePercent"/>
         <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
         <button type="submit" class="btn btn-success">Submit</button>
-
     </form>
 </div>
 <script src="/js/dealerTokesCalculator.js"></script>
