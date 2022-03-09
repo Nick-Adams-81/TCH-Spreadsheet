@@ -17,5 +17,5 @@ button.addEventListener("click", (e) => {
     dealerTakeHomeTotal.value = Math.floor(calculator(totalTokes));
     twelvePercent.value = totalTokes - Math.floor(calculator(totalTokes));
 
-})
+});
 

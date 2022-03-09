@@ -14,6 +14,7 @@ public class DealerTokes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    // tokes columns
     @Column
     private long totalTokes;
 
@@ -24,11 +25,14 @@ public class DealerTokes {
     private long dealerTakeHomeTotal;
 
 
+    // copy constructor
     public DealerTokes(DealerTokes copy) {
         id = copy.id;
         totalTokes = copy.totalTokes;
         twelvePercentTotal = copy.twelvePercentTotal;
         dealerTakeHomeTotal = copy.dealerTakeHomeTotal;
+        user = copy.user;
+        spreadsheet = copy.spreadsheet;
     }
 
     public DealerTokes() {}
