@@ -21,7 +21,8 @@ public class AdminController {
     public String admin(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.findById(loginUser.getId());
-        model.addAttribute("user", user.getId());
+        model.addAttribute("spreadsheet", user.getSpreadsheet());
+        model.addAttribute("dealerTokes", user.getDealerTokes());
         return "/admin";
     }
 }
