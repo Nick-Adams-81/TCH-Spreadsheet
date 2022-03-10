@@ -75,3 +75,23 @@
     margin-top: 20px;
     margin-left: 390px;
 }
+
+#targetTotal {
+    display: flex;
+    margin-right: 20px;
+}
+
+#tokesTotals {
+    display: flex;
+}
+
+#preTaxTotal {
+    margin-right: 20px;
+}
+
+#boxTotals {
+    display: flex;
+}
+
+
+

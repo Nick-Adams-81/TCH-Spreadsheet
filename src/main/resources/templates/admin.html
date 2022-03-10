@@ -4,23 +4,28 @@
 <body>
 <div th:replace="partials.html :: navbar"></div>
 
-<h1>Admin test</h1>
-<div class="row">
-    <div class="col">
-        <div th:each="spreadsheet : ${spreadsheet}">
-            <p th:text="${spreadsheet.getTargetTotal()}"></p>
+
+<div class="container">
+    <h1>Admin</h1>
+    <div class="row">
+        <div class="col-4">
+                <div id="boxTotals" th:each="spreadsheet : ${spreadsheet}">
+                    Target Total: <p id="targetTotal" th:text="${spreadsheet.getTargetTotal()}"></p>
+                    Box Total: <p th:text="${spreadsheet.getBoxTotal()}"></p>
+                </div>
         </div>
-    </div>
 
-    <div class="col">
-        <div th:each="tokes : ${dealerTokes}">
-            <p th:text="${tokes.getTotalTokes()}"></p>
-            <p th:text="${tokes.getDealerTakeHomeTotal()}"></p>
+        <div class="col-3">
+            <div id="tokesTotals" th:each="tokes : ${dealerTokes}">
+                pre tax total: <p id="preTaxTotal" th:text="${tokes.getTotalTokes()}"></p>
+                post tax total: <p id="postTaxTotal" th:text="${tokes.getDealerTakeHomeTotal()}"></p>
 
+            </div>
         </div>
-    </div>
 
+    </div>
 </div>
+
 
 
 
