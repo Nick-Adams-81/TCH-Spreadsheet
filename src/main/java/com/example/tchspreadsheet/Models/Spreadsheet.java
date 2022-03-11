@@ -104,6 +104,7 @@ public class Spreadsheet {
     @Column
     private long boxTotal;
 
+    // variance explanation //
     @Column
     private String varianceExplanation;
 

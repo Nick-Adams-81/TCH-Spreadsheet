@@ -10,13 +10,10 @@ const totals = (input, multiplier) => {
     return parseInt(input) * multiplier;
 }
 
-const cashGrandTotal = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
+const boxTotals = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
 
-const chipGrandTotal = (a, b, c, d, e, f, g, h, i, j, k, l ,m, n) => {
-    return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
-}
 
 // setting bank total manually, later will be set dynamically
 const bankGrandTotal = 18988;
@@ -94,12 +91,12 @@ submitButton.addEventListener("click", (e) => {
 
 
     // compute grand total of cash
-    const computedCashTotal = cashGrandTotal(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
+    const computedCashTotal = boxTotals(loseOnesTotal, strappedOnesTotal, loseTwosTotal, strappedTwosTotal, loseFivesTotal, strappedFivesTotal,
         loseTensTotal, strappedTensTotal, loseTwentiesTotal, strappedTwentiesTotal, loseFiftiesTotal, strappedFiftiesTotal, loseHundredsTotal,
         strappedHundredsTotal);
 
     // compute grand total of chips
-    const computedChipTotal = chipGrandTotal(loseOnesChipsTotal, rackedOnesChipsTotal, loseFivesChipsTotal, rackedFivesChipsTotal, loseTwentyFiveChipsTotal,
+    const computedChipTotal = boxTotals(loseOnesChipsTotal, rackedOnesChipsTotal, loseFivesChipsTotal, rackedFivesChipsTotal, loseTwentyFiveChipsTotal,
         rackedTwentyFiveChipsTotal, loseHundredChipTotal, rackedHundredChipTotal, loseFiveHundredChipTotal, rackedFiveHundredsTotal, loseThousandsTotal, rackedThousandsTotal,
         fiveThousandTotal, rackedFiveThousandsTotal);
 
