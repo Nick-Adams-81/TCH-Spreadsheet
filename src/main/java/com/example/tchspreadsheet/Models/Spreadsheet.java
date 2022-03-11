@@ -104,6 +104,9 @@ public class Spreadsheet {
     @Column
     private long boxTotal;
 
+    @Column
+    private String varianceExplanation;
+
 
     // copy constructor //
     public Spreadsheet(Spreadsheet copy) {
@@ -139,9 +142,10 @@ public class Spreadsheet {
         loseFiveThousands = copy.loseFiveThousands;
         rackedFiveThousands = copy.rackedFiveThousands;
 
-        // totals copy constructor
+        // totals and variance explanation copy constructor
         targetTotal = copy.targetTotal;
         boxTotal = copy.boxTotal;
+        varianceExplanation = copy.varianceExplanation;
 
     }
 
@@ -431,5 +435,13 @@ public class Spreadsheet {
 
     public void setBoxTotal(long boxTotal) {
         this.boxTotal = boxTotal;
+    }
+
+    public String getVarianceExplanation() {
+        return varianceExplanation;
+    }
+
+    public void setVarianceExplanation(String varianceExplanation) {
+        this.varianceExplanation = varianceExplanation;
     }
 }
