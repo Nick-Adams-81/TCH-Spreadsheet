@@ -12,6 +12,7 @@
                 <div id="boxTotals" th:each="spreadsheet : ${spreadsheet}">
                     Target Total: <p id="targetTotal" th:text="${spreadsheet.getTargetTotal()}"></p>
                     Box Total: <p th:text="${spreadsheet.getBoxTotal()}"></p>
+                    Variance explanation: <p th:text="${spreadsheet.getVarianceExplanation()}"></p>
                 </div>
         </div>
 
