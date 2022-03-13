@@ -54,7 +54,6 @@
                     <div class="col">
                         $100 <input type="number" th:field="*{loseHundreds}" id="loseHundreds" required/>
                         <input type="number" th:field="*{strappedHundreds}" id="strappedHundreds" required/>
-
                     </div>
 
                     <br>
@@ -109,6 +108,7 @@
             <div id="totals">
                 Total: <input id="bankTotal" th:field="*{targetTotal}"/>
                 Computed total: <input id="computedTotal" th:field="*{boxTotal}"/>
+                Variance Explanation: <input type="text" th:field="*{varianceExplanation}"/>
             </div>
 
             <div id="buttons">
