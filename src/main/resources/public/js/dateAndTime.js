@@ -12,3 +12,7 @@ startShiftButton.addEventListener("click", () => {
 pauseShiftButton.addEventListener("click", () => {
     console.log("test pause shift click event")
 });
+
+endShiftButton.addEventListener("click", () => {
+    console.log("test end shift click event")
+})
