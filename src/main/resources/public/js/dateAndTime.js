@@ -5,8 +5,14 @@ const pauseShiftButton = document.getElementById("pauseShiftButton");
 const endShiftButton = document.getElementById("endShiftButton");
 
 
+const today = new Date();
+const date =  (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+
+
+
+
 startShiftButton.addEventListener("click", () => {
-    console.log("test click event")
+    console.log(date)
 });
 
 pauseShiftButton.addEventListener("click", () => {
