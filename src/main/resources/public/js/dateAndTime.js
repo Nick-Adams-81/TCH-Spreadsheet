@@ -32,14 +32,16 @@ const minutes = (mins) => {
 
 
 startShiftButton.addEventListener("click", () => {
-    console.log(date);
+    if(timeHours > 12) console.log(date + " at: " + standardTime(timeHours) + ":" + minutes(timeMinutes) + " pm");
+    else console.log(date + " at: " + timeHours + ":" + minutes(timeMinutes) + " am");
 });
 
 pauseShiftButton.addEventListener("click", () => {
-    if(timeHours > 12) console.log(standardTime(timeHours) + ":" + minutes(timeMinutes) + " pm");
-    else console.log(timeHours + ":" + minutes(timeMinutes) + " am")
+    if(timeHours > 12) console.log(date + " at: " + standardTime(timeHours) + ":" + minutes(timeMinutes) + " pm");
+    else console.log(date + " at: " + timeHours + ":" + minutes(timeMinutes) + " am");
 });
 
 endShiftButton.addEventListener("click", () => {
-    console.log("test end shift click event")
+    if(timeHours > 12) console.log(date + " at: " + standardTime(timeHours) + ":" + minutes(timeMinutes) + " pm");
+    else console.log(date + " at: " + timeHours + ":" + minutes(timeMinutes) + " am");
 })
