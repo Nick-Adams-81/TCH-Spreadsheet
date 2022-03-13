@@ -108,7 +108,9 @@
             <div id="totals">
                 Total: <input id="bankTotal" th:field="*{targetTotal}"/>
                 Computed total: <input id="computedTotal" th:field="*{boxTotal}"/>
-                Variance Explanation: <input type="text" th:field="*{varianceExplanation}"/>
+            </div>
+            <div id="variance">
+                Variance Explanation: <textarea  th:field="*{varianceExplanation}"></textarea>
             </div>
 
             <div id="buttons">
