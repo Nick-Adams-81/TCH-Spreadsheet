@@ -16,12 +16,16 @@ public class LoginTimes {
     private String date;
 
     @Column
-    private String time;
+    private String startTime;
+
+    @Column
+    private String endTime;
 
     public LoginTimes(LoginTimes copy) {
         id = copy.id;
         date = copy.date;
-        time = copy.time;
+        startTime = copy.startTime;
+        endTime = copy.endTime;
     }
 
     public LoginTimes () {}
@@ -53,11 +57,19 @@ public class LoginTimes {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }
