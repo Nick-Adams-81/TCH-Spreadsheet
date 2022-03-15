@@ -2,6 +2,7 @@ package com.example.tchspreadsheet.Controllers;
 
 
 import com.example.tchspreadsheet.Models.User;
+import com.example.tchspreadsheet.Repositories.LoginTimesRepository;
 import com.example.tchspreadsheet.Repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,11 @@ import java.util.Optional;
 public class HomeController {
 
     private final UserRepository userDao;
+    private final LoginTimesRepository loginDao;
 
-
-    public HomeController(UserRepository userDao) {
+    public HomeController(UserRepository userDao, LoginTimesRepository loginDao) {
         this.userDao = userDao;
+        this.loginDao = loginDao;
     }
 
     @GetMapping("/home")
