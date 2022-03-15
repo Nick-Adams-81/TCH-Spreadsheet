@@ -48,7 +48,6 @@ let midnight = `${date} at: ${midnightConversion(timeHours)}:${minutes(timeMinut
 console.log(typeof timeAm);
 
 
-
 // adding click events to button elements //
 startShiftButton.addEventListener("click", () => {
     if(timeHours >= 12) console.log(timePm);

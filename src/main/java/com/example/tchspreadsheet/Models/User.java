@@ -55,6 +55,14 @@ public class User {
     )
     private List<DealerTokes> dealerTokes;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_loginTimes_bridge",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "loginTimes_id")}
+    )
+    private List<LoginTimes> loginTimes;
+
 
     // getters and setters for users table values
     public long getId() {
@@ -79,6 +87,14 @@ public class User {
 
     public void setDealerTokes(List<DealerTokes> dealerTokes) {
         this.dealerTokes = dealerTokes;
+    }
+
+    public List<LoginTimes> getLoginTimes() {
+        return loginTimes;
+    }
+
+    public void setLoginTimes(List<LoginTimes> loginTimes) {
+        this.loginTimes = loginTimes;
     }
 
     public String getUsername() {
