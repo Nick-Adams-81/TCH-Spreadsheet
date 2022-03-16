@@ -9,7 +9,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -32,4 +35,16 @@ public class HomeController {
         model.addAttribute("startTime", new LoginTimes());
         return "home";
     }
+
+    @PostMapping("/startTime")
+    public String statTime(@ModelAttribute LoginTimes loginTimes) {
+        User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDao.findById(loginUser.getId());
+        List<LoginTimes> loginTimesList = user.getLoginTimes();
+        loginTimesList.add(loginTimes);
+        user.setLoginTimes(loginTimesList);
+        userDao.save(user);
+        return "redirect:/spreadsheet";
+    }
+
 }
