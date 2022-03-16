@@ -13,7 +13,11 @@
         </form>
 
         <button type="button" class="btn btn-primary" id="pauseShiftButton">Pause Shift</button>
-        <button type="button" class="btn btn-success" id="endShiftButton">End Shift</button>
+        <form th:method="post" th:object="${startTime}" th:action="@{/startTime}">
+            <input type="hidden" id="logoutTime" th:field="*{endTime}"/>
+            <button type="submit" class="btn btn-success" id="endShiftButton">End Shift</button>
+        </form>
+
     </div>
 </div>
 

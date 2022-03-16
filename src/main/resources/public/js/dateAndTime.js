@@ -5,6 +5,7 @@ const startShiftButton = document.getElementById("startShiftButton");
 const pauseShiftButton = document.getElementById("pauseShiftButton");
 const endShiftButton = document.getElementById("endShiftButton");
 const loginTime = document.getElementById("loginTime");
+const logoutTime = document.getElementById("logoutTime");
 
 // setting up a new date variable //
 const today = new Date();
@@ -65,7 +66,8 @@ pauseShiftButton.addEventListener("click", () => {
 });
 
 endShiftButton.addEventListener("click", () => {
-    if(timeHours >= 12) console.log(timePm);
-    else if(timeHours === 0) console.log(midnight);
-    else console.log(timeAm);
+    if(timeHours > 12) logoutTime.value = timePm;
+    else if(timeHours === 0)  logoutTime.value = midnight;
+    else if(timeHours === 12) logoutTime.value = noon;
+    else logoutTime.value = timeAm;
 });
