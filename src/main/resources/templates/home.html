@@ -9,11 +9,11 @@
     <div class="d-grid gap-2">
         <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
             <input type="hidden" id="loginTime" th:field="*{startTime}"/>
-            <button type="button" class="btn btn-success" id="startShiftButton">Start Shift</button>
-        </form>
+            <button type="button" class="btn btn-success" id="startShiftButton" onclick="window.location.href='/spreadsheet'">Start Shift</button>
 
-        <button type="button" class="btn btn-primary" id="pauseShiftButton">Pause Shift</button>
-        <form th:method="post" th:object="${startTime}" th:action="@{/startTime}">
+
+            <button type="button" class="btn btn-primary" id="pauseShiftButton">Pause Shift</button>
+
             <input type="hidden" id="logoutTime" th:field="*{endTime}"/>
             <button type="submit" class="btn btn-success" id="endShiftButton">End Shift</button>
         </form>

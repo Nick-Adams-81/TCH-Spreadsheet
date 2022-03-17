@@ -12,9 +12,6 @@ const today = new Date();
 
 // getting the current date //
 const date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-console.log(typeof date);
-
-
 
 // getting the current time //
 
@@ -47,8 +44,6 @@ let timeAm = `${date} at: ${standardTime(timeHours)}:${minutes(timeMinutes)} am`
 let timePm = `${date} at: ${standardTime(timeHours)}:${minutes(timeMinutes)} pm`;
 let midnight = `${date} at: ${midnightConversion(timeHours)}:${minutes(timeMinutes)} am`;
 let noon = `${date} at: ${timeHours} : ${minutes(timeMinutes)} pm`;
-
-console.log(typeof timeAm);
 
 
 // adding click events to button elements //
