@@ -10,13 +10,14 @@
         <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
             <input type="hidden" id="loginTime" th:field="*{startTime}"/>
             <button type="submit" class="btn btn-success" id="startShiftButton"
-                    onclick="window.location.href='/spreadsheet'">Start Shift
+                    >Start Shift
             </button>
         </form>
 
 
         <button type="button" class="btn btn-primary" id="pauseShiftButton">Pause Shift</button>
-        <form th:method="post" th:action="@{/startTime}" th:object=${startTime}">
+
+        <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
 
 
             <input type="hidden" id="logoutTime" th:field="*{endTime}"/>
