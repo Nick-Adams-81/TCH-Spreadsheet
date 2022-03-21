@@ -8,10 +8,9 @@
 <div class="container">
     <div class="d-grid gap-2">
         <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
-            <input type="hidden" id="loginTime" th:field="*{startTime}"/>
-            <button type="submit" class="btn btn-success" id="startShiftButton"
-                    >Start Shift
-            </button>
+            <input type="hidden" id="loginTime" th:field="*{startTime}" />
+            <input type="hidden" id="date" th:field="*{date}" />
+            <button type="submit" class="btn btn-success" id="startShiftButton">Start Shift</button>
         </form>
 
 

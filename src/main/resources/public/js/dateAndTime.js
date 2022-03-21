@@ -6,12 +6,14 @@ const pauseShiftButton = document.getElementById("pauseShiftButton");
 const endShiftButton = document.getElementById("endShiftButton");
 const loginTime = document.getElementById("loginTime");
 const logoutTime = document.getElementById("logoutTime");
+const setDate = document.getElementById("date");
 
 // setting up a new date variable //
 const today = new Date();
 
 // getting the current date //
-const date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+console.log(date);
 
 // getting the current time //
 
@@ -40,10 +42,10 @@ const midnightConversion = (hours) => {
  }
 
  // creating variables to hold date and time
-let timeAm = `${date} at: ${standardTime(timeHours)}:${minutes(timeMinutes)} am`;
-let timePm = `${date} at: ${standardTime(timeHours)}:${minutes(timeMinutes)} pm`;
-let midnight = `${date} at: ${midnightConversion(timeHours)}:${minutes(timeMinutes)} am`;
-let noon = `${date} at: ${timeHours} : ${minutes(timeMinutes)} pm`;
+let timeAm = `${standardTime(timeHours)}:${minutes(timeMinutes)} am`;
+let timePm = `${standardTime(timeHours)}:${minutes(timeMinutes)} pm`;
+let midnight = `${midnightConversion(timeHours)}:${minutes(timeMinutes)} am`;
+let noon = `${timeHours} : ${minutes(timeMinutes)} pm`;
 
 
 // adding click events to button elements //
@@ -51,7 +53,8 @@ startShiftButton.addEventListener("click", () => {
     if(timeHours > 12) loginTime.value = timePm;
     else if(timeHours === 0)  loginTime.value = midnight;
     else if(timeHours === 12) loginTime.value = noon;
-    else loginTime.value = timeAm;
+    else loginTime.value = `${date} at: ${timeAm}`;
+    setDate.value = date;
 });
 
 pauseShiftButton.addEventListener("click", () => {
