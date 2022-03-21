@@ -43,7 +43,7 @@ public class HomeController {
         loginTimesList.add(loginTimes);
         user.setLoginTimes(loginTimesList);
         userDao.save(user);
-        return "redirect:/spreadsheet";
+        return "redirect:/home";
     }
 
 }
