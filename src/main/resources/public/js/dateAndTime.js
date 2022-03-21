@@ -69,6 +69,6 @@ endShiftButton.addEventListener("click", () => {
     else if(timeHours === 0) loginTime.value = localStorage.getItem("start time midnight");
     else if(timeHours === 12) loginTime.value = localStorage.getItem("start time noon");
     else loginTime.value = localStorage.getItem("start time am");
-
     logoutDate.value = date;
+    localStorage.clear();
 });
