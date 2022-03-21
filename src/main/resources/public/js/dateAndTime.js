@@ -7,6 +7,7 @@ const endShiftButton = document.getElementById("endShiftButton");
 const loginTime = document.getElementById("loginTime");
 const logoutTime = document.getElementById("logoutTime");
 const setDate = document.getElementById("date");
+const logoutDate = document.getElementById("logoutDate");
 
 // setting up a new date variable //
 const today = new Date();
@@ -73,4 +74,5 @@ endShiftButton.addEventListener("click", () => {
     localStorage.getItem("start time");
     localStorage.getItem("start date");
     localStorage.clear();
+    logoutDate.value = date;
 });
