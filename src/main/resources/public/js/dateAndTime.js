@@ -14,9 +14,6 @@ const today = new Date();
 
 // getting the current date //
 const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
-console.log(date);
-
-// getting the current time //
 
 // getting current military(24-hour clock) time in hours
 const timeHours = today.getHours();
@@ -51,13 +48,10 @@ let noon = `${timeHours} : ${minutes(timeMinutes)} pm`;
 
 // adding click events to button elements //
 startShiftButton.addEventListener("click", () => {
-    localStorage.setItem("start time", timePm);
-    localStorage.setItem("start date", date)
-    if(timeHours > 12) loginTime.value = timePm;
-    else if(timeHours === 0)  loginTime.value = midnight;
-    else if(timeHours === 12) loginTime.value = noon;
-    else loginTime.value = `${date} at: ${timeAm}`;
-    setDate.value = date;
+    if(timeHours > 12) localStorage.setItem("start time pm", timePm);
+    else if(timeHours === 0)  localStorage.setItem("start time midnight", midnight);
+    else if(timeHours === 12) localStorage.setItem("start time noon", noon);
+    else localStorage.setItem("start time am", timeAm);
 });
 
 pauseShiftButton.addEventListener("click", () => {
@@ -71,8 +65,10 @@ endShiftButton.addEventListener("click", () => {
     else if(timeHours === 0)  logoutTime.value = midnight;
     else if(timeHours === 12) logoutTime.value = noon;
     else logoutTime.value = timeAm;
-    localStorage.getItem("start time");
-    localStorage.getItem("start date");
-    localStorage.clear();
+    if(timeHours > 12) loginTime.value = localStorage.getItem("start time pm");
+    else if(timeHours === 0) loginTime.value = localStorage.getItem("start time midnight");
+    else if(timeHours === 12) loginTime.value = localStorage.getItem("start time noon");
+    else loginTime.value = localStorage.getItem("start time am");
+
     logoutDate.value = date;
 });

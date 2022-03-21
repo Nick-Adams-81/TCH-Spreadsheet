@@ -7,9 +7,8 @@
 <h1 id="cash-header">Homepage</h1>
 <div class="container">
     <div class="d-grid gap-2">
-        <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
-            <input type="hidden" id="loginTime" th:field="*{startTime}" />
-            <input type="hidden" id="date" th:field="*{date}" />
+        <form>
+
             <button type="submit" class="btn btn-success" id="startShiftButton">Start Shift</button>
         </form>
 
@@ -17,8 +16,7 @@
         <button type="button" class="btn btn-primary" id="pauseShiftButton">Pause Shift</button>
 
         <form th:method="post" th:action="@{/startTime}" th:object="${startTime}">
-
-
+            <input type="hidden" id="loginTime" th:field="*{startTime}" />
             <input type="hidden" id="logoutTime" th:field="*{endTime}"/>
             <input type="hidden" id="logoutDate" th:field="*{date}" />
             <button type="submit" class="btn btn-success" id="endShiftButton">End Shift</button>
