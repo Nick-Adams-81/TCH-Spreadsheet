@@ -48,6 +48,7 @@ let noon = `${timeHours} : ${minutes(timeMinutes)} pm`;
 
 // adding click events to button elements //
 startShiftButton.addEventListener("click", () => {
+    localStorage.setItem("date", date);
     if(timeHours > 12) localStorage.setItem("start time pm", timePm);
     else if(timeHours === 0)  localStorage.setItem("start time midnight", midnight);
     else if(timeHours === 12) localStorage.setItem("start time noon", noon);
@@ -65,10 +66,12 @@ endShiftButton.addEventListener("click", () => {
     else if(timeHours === 0)  logoutTime.value = midnight;
     else if(timeHours === 12) logoutTime.value = noon;
     else logoutTime.value = timeAm;
+
     if(timeHours > 12) loginTime.value = localStorage.getItem("start time pm");
     else if(timeHours === 0) loginTime.value = localStorage.getItem("start time midnight");
     else if(timeHours === 12) loginTime.value = localStorage.getItem("start time noon");
     else loginTime.value = localStorage.getItem("start time am");
-    logoutDate.value = date;
+
+    logoutDate.value = localStorage.getItem("date");
     localStorage.clear();
 });
