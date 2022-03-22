@@ -27,9 +27,7 @@ const standardTime = (hours) => {
 
 // function to add a 0 if minutes is less than 10
 const minutes = (mins) => {
-    // if(mins < 10) return "0" + mins;
-    // else return mins;
-    return mins < 10 ? "0" + mins : mins;
+    return mins < 10 ? `0${mins}` : mins;
 }
 
 // converting 0 hundred hours to 12 midnight
