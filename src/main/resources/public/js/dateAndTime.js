@@ -32,8 +32,6 @@ const minutes = (mins) => {
 
 // converting 0 hundred hours to 12 midnight
 const midnightConversion = (hours) => {
-    // if(hours === 0) return hours + 12;
-    // else return hours;
     return hours === 0 ? hours + 12 : hours;
 }
 
