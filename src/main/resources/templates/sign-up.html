@@ -13,7 +13,6 @@
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" th:field="*{username}">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
@@ -23,9 +22,15 @@
             <label class="form-label" for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" th:field="*{email}">
         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" onclick="validate()" id="flexCheckDefault" th:field="*{isAdmin}">
+            <label class="form-check-label" for="flexCheckDefault">
+                Check if this user is an Administrator
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
+<script src="/js/signUp.js"></script>
 </body>
 </html>
