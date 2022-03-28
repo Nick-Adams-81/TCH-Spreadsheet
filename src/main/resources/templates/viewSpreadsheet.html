@@ -4,5 +4,19 @@
 <body>
 <div th:replace="partials.html :: navbar"></div>
 <h1 id="view-spreadsheets-header">View Spreadsheets</h1>
+<container>
+    <div id="boxTotals" th:each="spreadsheet : ${spreadsheet}">
+        <div id="target">
+            Target Total: <p id="targetTotal" th:text="${spreadsheet.getTargetTotal()}"></p>
+        </div>
+        <div id="box-total">
+            Box Total: <p th:text="${spreadsheet.getBoxTotal()}"></p>
+        </div>
+        <div id="variance-explanation">
+            Variance Explanation: <p th:text="${spreadsheet.getVarianceExplanation()}"></p>
+        </div>
+
+    </div>
+</container>
 </body>
 </html>
