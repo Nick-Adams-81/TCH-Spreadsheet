@@ -54,8 +54,9 @@ startShiftButton.addEventListener("click", () => {
 pauseShiftButton.addEventListener("click", (e) => {
     e.preventDefault();
     return timeHours >= 12 ? console.log(timePm)
-            : timeHours === 0 ? console.log(midnight)
-            : console.log(timeAm);
+        : timeHours === 0 ? console.log(midnight)
+            : timeHours === 12 ? console.log(noon)
+                : console.log(timeAm);
 });
 
 endShiftButton.addEventListener("click", () => {
