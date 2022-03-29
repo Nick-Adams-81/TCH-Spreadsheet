@@ -3,5 +3,5 @@
 const checkBox = document.getElementById("flexCheckDefault");
 
 const validate = () => {
-    return checkBox.checked ? checkBox.value = 1 : checkBox.value = 0;
+    return checkBox.checked ? checkBox.value = true : checkBox.value = false;
 }
