@@ -31,6 +31,7 @@ public class DealerTokesController {
         User user = userDao.findById(loginUser.getId());
         model.addAttribute("user", user.getDealerTokes());
         model.addAttribute("dealerTokes", new DealerTokes());
+        model.addAttribute("dealers", user.getDealer());
         return "dealer-tokes";
     }
 

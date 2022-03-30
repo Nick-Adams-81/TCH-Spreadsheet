@@ -24,6 +24,9 @@ public class DealerTokes {
     @Column
     private long dealerTakeHomeTotal;
 
+    @Column
+    private String dealerName;
+
 
     // copy constructor
     public DealerTokes(DealerTokes copy) {
@@ -31,6 +34,7 @@ public class DealerTokes {
         totalTokes = copy.totalTokes;
         twelvePercentTotal = copy.twelvePercentTotal;
         dealerTakeHomeTotal = copy.dealerTakeHomeTotal;
+        dealerName = copy.dealerName;
         user = copy.user;
         spreadsheet = copy.spreadsheet;
     }
@@ -94,5 +98,13 @@ public class DealerTokes {
 
     public void setDealerTakeHomeTotal(long dealerTakeHomeTotal) {
         this.dealerTakeHomeTotal = dealerTakeHomeTotal;
+    }
+
+    public String getDealerName() {
+        return dealerName;
+    }
+
+    public void setDealerName(String dealerName) {
+        this.dealerName = dealerName;
     }
 }
