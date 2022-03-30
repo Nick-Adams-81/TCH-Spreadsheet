@@ -63,6 +63,14 @@ public class User {
     )
     private List<LoginTimes> loginTimes;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_dealer_bridge",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "dealer_id")}
+    )
+    private List<Dealer> dealers;
+
 
     // getters and setters for users table values
     public long getId() {
@@ -71,6 +79,14 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Dealer> getDealer() {
+        return dealers;
+    }
+
+    public void setDealer(List<Dealer> dealer) {
+        this.dealers = dealer;
     }
 
     public List<Spreadsheet> getSpreadsheet() {
@@ -129,5 +145,11 @@ public class User {
         isAdmin = admin;
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
 
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 }

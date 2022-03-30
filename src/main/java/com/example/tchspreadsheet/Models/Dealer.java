@@ -26,12 +26,7 @@ public class Dealer {
 
     public Dealer() {}
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_dealer_bridge",
-            joinColumns = {@JoinColumn(name = "dealer_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_id")}
-    )
+    @ManyToMany(mappedBy = "dealers")
     private List<User> user;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -81,4 +76,5 @@ public class Dealer {
     public void setDealerTokes(List<DealerTokes> dealerTokes) {
         this.dealerTokes = dealerTokes;
     }
+
 }
