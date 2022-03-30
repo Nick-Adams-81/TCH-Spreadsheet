@@ -18,8 +18,8 @@ public class Dealer {
     @Column(length = 4)
     private int pin;
 
-    @ManyToMany(mappedBy = "dealers")
-    private List<User> users;
+//    @ManyToMany(mappedBy = "dealers")
+//    private List<User> users;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -53,13 +53,13 @@ public class Dealer {
         this.pin = pin;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
+//    }
 
     public List<DealerTokes> getDealerTokes() {
         return dealerTokes;
