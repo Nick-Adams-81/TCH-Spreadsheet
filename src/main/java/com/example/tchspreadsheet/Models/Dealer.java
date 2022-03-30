@@ -18,8 +18,21 @@ public class Dealer {
     @Column(length = 4)
     private int pin;
 
-//    @ManyToMany(mappedBy = "dealers")
-//    private List<User> users;
+    public Dealer(Dealer copy) {
+        id = copy.id;
+        name = copy.name;
+        pin = copy.pin;
+    }
+
+    public Dealer() {}
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "user_dealer_bridge",
+            joinColumns = {@JoinColumn(name = "dealer_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")}
+    )
+    private List<User> user;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -53,13 +66,13 @@ public class Dealer {
         this.pin = pin;
     }
 
-//    public List<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(List<User> users) {
-//        this.users = users;
-//    }
+    public List<User> getUser() {
+        return user;
+    }
+
+    public void setUser(List<User> user) {
+        this.user = user;
+    }
 
     public List<DealerTokes> getDealerTokes() {
         return dealerTokes;
