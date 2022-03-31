@@ -2,6 +2,9 @@
 
 // getting the button id
 const button = document.getElementById("calculate-percent");
+const today = new Date();
+const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+console.log(typeof date);
 
 // function to calculate 12%
 const calculator = (input) => {
@@ -16,6 +19,5 @@ button.addEventListener("click", (e) => {
     const twelvePercent = document.getElementById("twelvePercent");
     dealerTakeHomeTotal.value = Math.floor(calculator(totalTokes));
     twelvePercent.value = totalTokes - Math.floor(calculator(totalTokes));
-
 });
 

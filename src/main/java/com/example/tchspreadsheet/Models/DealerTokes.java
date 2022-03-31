@@ -27,6 +27,8 @@ public class DealerTokes {
     @Column
     private String dealerName;
 
+    @Column
+    private String date;
 
     // copy constructor
     public DealerTokes(DealerTokes copy) {
@@ -37,6 +39,7 @@ public class DealerTokes {
         dealerName = copy.dealerName;
         user = copy.user;
         spreadsheet = copy.spreadsheet;
+        date = copy.date;
     }
 
     public DealerTokes() {}
@@ -106,5 +109,13 @@ public class DealerTokes {
 
     public void setDealerName(String dealerName) {
         this.dealerName = dealerName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
