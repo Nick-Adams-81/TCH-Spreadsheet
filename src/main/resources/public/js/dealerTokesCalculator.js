@@ -2,9 +2,11 @@
 
 // getting the button id
 const button = document.getElementById("calculate-percent");
+const todaysDate = document.getElementById("current-date");
 const today = new Date();
 const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
 console.log(typeof date);
+todaysDate.value = date;
 
 // function to calculate 12%
 const calculator = (input) => {

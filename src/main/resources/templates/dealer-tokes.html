@@ -30,7 +30,7 @@
             Total tokes: <input type="number" th:field="*{totalTokes}" id="totalTokes"/>
             After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
             12% total: <input type="number" th:field="*{twelvePercentTotal}" id="twelvePercent"/>
-            <input type="hidden" id="current-date"/>
+            <input type="hidden" th:field="*{date}" id="current-date"/>
             <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
