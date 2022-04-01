@@ -2,10 +2,19 @@
 
 // getting the button id
 const button = document.getElementById("calculate-percent");
+const dealersNames = document.getElementById("dealers-names");
+const dealerName = document.getElementById("dealers-name");
+const dealerButton = document.getElementById("dealer-button");
+
+dealerButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    dealerName.value = dealersNames.value;
+})
+
+// setting up and getting today's date
 const todaysDate = document.getElementById("current-date");
 const today = new Date();
 const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
-console.log(typeof date);
 todaysDate.value = date;
 
 // function to calculate 12%

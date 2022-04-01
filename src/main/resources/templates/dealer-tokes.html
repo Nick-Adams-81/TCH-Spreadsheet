@@ -7,23 +7,22 @@
 <div class="col-sm-6">
     <h1 id="cash-header">Dealer Tokes</h1>
     <div class="col">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                Dealers
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                <div id="tokesTotals" th:each="dealers : ${dealers}">
+                    <li th:text="${dealers.getName()}" id="dealers-names"></li><button id="dealer-button">click</button>
+                </div>
+
+            </ul>
+        </div>
+
         <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                    Dealers
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <div class="form-check">
-                        <div id="tokesTotals" th:each="dealers : ${dealers}">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <p th:text="${dealers.getName()}" id="dealers-names"></p>
-                            </label>
-                        </div>
-                    </div>
-                </ul>
-            </div>
+
             <br>
             <br>
             Dealer: <input type="text" th:field="*{dealerName}" id="dealers-name"/>
