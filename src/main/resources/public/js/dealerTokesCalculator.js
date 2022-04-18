@@ -13,7 +13,7 @@ const submitForm = document.getElementById("submit-form");
 dealerButton.addEventListener("click", (e) => {
     e.preventDefault();
     dealerName.value = dealersNames.value;
-})
+});
 
 // setting up and getting today's date
 const today = new Date();
@@ -23,7 +23,7 @@ todaysDate.value = date;
 // function to calculate 12%
 const calculator = (input) => {
     return parseInt(input) * .88;
-}
+};
 
 // adding the event listener to calculate the 12% on button click
 button.addEventListener("click", (e) => {
