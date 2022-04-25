@@ -21,6 +21,7 @@ public class ViewDealerTokes {
     public String ViewTokes(Model model) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.findById(loginUser.getId());
+        model.addAttribute("dealer", user.getDealer());
         model.addAttribute("tokes", user.getDealerTokes());
         return "viewTokes";
 

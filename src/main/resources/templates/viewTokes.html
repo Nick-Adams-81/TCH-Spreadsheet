@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="partials.html :: site-head"></div>
 <body>
-<h1>View tokes test</h1>
+<div th:replace="partials.html :: navbar"></div>
+
+<container>
+    <h1>View tokes</h1>
+    <div id="boxTotals" th:each="tokes : ${tokes}">
+        <div id="target">
+            Dealer: <p id="targetTotal" th:text="${tokes.getDealerName()}"></p>
+        </div>
+        <div id="box-total">
+            tokes: <p th:text="${tokes.getTotalTokes()}"></p>
+        </div>
+        <div id="variance-explanation">
+            12%: <p th:text="${tokes.getTwelvePercentTotal()}"></p>
+        </div>
+
+        <div id="variance-explanation">
+            take home: <p th:text="${tokes.getDealerTakeHomeTotal()}"></p>
+        </div>
+
+    </div>
+</container>
+
+
 </body>
 </html>
