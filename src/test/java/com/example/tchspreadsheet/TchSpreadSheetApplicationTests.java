@@ -9,18 +9,5 @@ import static org.junit.Assert.*;
 @SpringBootTest
 class TchSpreadSheetApplicationTests {
 
-    @Test
-    void contextLoads() {
-        String expected = "Codeup";
-        String actual = "Codeup";
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    void testNull() {
-        String string = null;
-        Assertions.assertNull(string);
-    }
 
 }
