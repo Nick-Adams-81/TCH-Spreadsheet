@@ -8,10 +8,10 @@
     <h1 id="cash-header">Dealer Tokes</h1>
     <div class="col">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                Dealers
-            </button>
+<!--            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"-->
+<!--                    data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                Dealers-->
+<!--            </button>-->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                 <div id="tokesTotals" th:each="dealers : ${dealers}">
@@ -26,8 +26,8 @@
             <br>
             Dealer: <input type="text" th:field="*{dealerName}" id="dealers-name"/>
             Total tokes: <input type="number" th:field="*{totalTokes}" id="totalTokes"/>
-            After 12%: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
             12% total: <input type="number" th:field="*{twelvePercentTotal}" id="twelvePercent"/>
+            Dealer Take Home: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
             <input type="hidden" th:field="*{date}" id="current-date"/>
             <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
             <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
