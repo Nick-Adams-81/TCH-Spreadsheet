@@ -14,8 +14,8 @@ const boxTotals = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
 
-
 // setting bank total manually, later will be set dynamically
+// TODO: change bank grand total variable to accept user input from change box total html file
 const bankGrandTotal = 18988;
 bankTotal.value = bankGrandTotal;
 
