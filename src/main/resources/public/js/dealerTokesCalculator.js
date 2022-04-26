@@ -21,6 +21,7 @@ const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
 todaysDate.value = date;
 
 // function to calculate 12%
+// TODO: make calculated percentage adjustable from user input
 const calculator = (input) => {
     return parseInt(input) * .88;
 };
