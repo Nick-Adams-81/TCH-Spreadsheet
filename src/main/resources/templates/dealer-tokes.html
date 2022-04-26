@@ -3,9 +3,9 @@
 <div th:replace="partials.html :: site-head"></div>
 <body>
 <div th:replace="partials.html :: navbar"></div>
-
+<h1 id="cash-header">Dealer Tokes</h1>
 <div class="col-sm-6">
-    <h1 id="cash-header">Dealer Tokes</h1>
+
     <div class="col">
         <div class="dropdown">
 <!--            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"-->
@@ -21,17 +21,34 @@
             </ul>
         </div>
 
-        <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post" id="submit-form">
-            <br>
-            <br>
-            Dealer: <input type="text" th:field="*{dealerName}" id="dealers-name"/>
-            Total tokes: <input type="number" th:field="*{totalTokes}" id="totalTokes"/>
-            12% total: <input type="number" th:field="*{twelvePercentTotal}" id="twelvePercent"/>
-            Dealer Take Home: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
-            <input type="hidden" th:field="*{date}" id="current-date"/>
-            <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
-            <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
-        </form>
+        <div>
+            <form th:action="@{/dealerTokes}" th:object="${dealerTokes}" th:method="post" id="submit-form">
+                <br>
+                <br>
+                <div id="dealer-name">
+                    Dealer Name: <input type="text" th:field="*{dealerName}" id="dealers-name"/>
+                </div>
+
+                <div id="total-dealer-tokes">
+                    Total tokes: <input type="number" th:field="*{totalTokes}" id="totalTokes"/>
+                </div>
+
+                <div id="house-cut">
+                    12% total: <input type="number" th:field="*{twelvePercentTotal}" id="twelvePercent"/>
+                </div>
+
+                <div id="dealer-take-home">
+                    Take Home: <input type="number" th:field="*{dealerTakeHomeTotal}" id="dealerTakeHomeTotal"/>
+                </div>
+
+                <input type="hidden" th:field="*{date}" id="current-date"/>
+                <div id="tokes-btns" class="col-sm-12">
+                    <button id="calculate-percent" class="btn btn-primary">Calculate 12%</button>
+                    <button type="submit" class="btn btn-success" id="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+
 
 
     </div>

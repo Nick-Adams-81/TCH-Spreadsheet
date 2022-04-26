@@ -123,5 +123,55 @@
     text-align: center;
 }
 
+#submit-form {
+    margin-left: 400px;
+}
+
+#dealer-name {
+    font-size: 25px;
+    display: flex;
+    margin-bottom: 3px;
+}
+
+#total-dealer-tokes {
+    font-size: 25px;
+    display: flex;
+    margin-bottom: 3px;
+}
+
+#house-cut {
+    font-size: 25px;
+    display: flex;
+    margin-bottom: 3px;
+}
+
+#dealer-take-home {
+    font-size: 25px;
+    display: flex;
+}
+
+#dealers-name {
+    margin-left: 10px;
+
+}
+
+#twelvePercent {
+    margin-left: 25px;
+
+}
+
+#totalTokes {
+    margin-left: 15px;
+}
+
+#dealerTakeHomeTotal {
+    margin-left: 6px;
+}
+
+#tokes-btns {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
 
 
