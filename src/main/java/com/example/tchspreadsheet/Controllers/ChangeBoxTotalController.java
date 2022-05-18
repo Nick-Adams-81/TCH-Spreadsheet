@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class ChangeBoxTotalController {
 
@@ -33,6 +35,7 @@ public class ChangeBoxTotalController {
     public String changeBoxTotal(@ModelAttribute Spreadsheet spreadsheet) {
         User loginUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.findById(loginUser.getId());
+        List<Spreadsheet> boxTotals = user.getSpreadsheet();
         return "changeBoxTotal";
     }
 }

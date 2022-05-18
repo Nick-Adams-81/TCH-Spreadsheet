@@ -4,12 +4,13 @@
 let submitButton = document.getElementById("submitButton");
 let userTotals = document.getElementById("computedTotal");
 let bankTotal = document.getElementById("bankTotal");
+const functions = require("./functions");
 
 // function to return totals of racked and strapped chips and money
 const totals = (input, multiplier) => {
     return parseInt(input) * multiplier;
 }
-
+console.log(functions.add(5, 6));
 const boxTotals = (a, b, c, d, e, f, g, h, i, j, k, l, m, n) => {
     return a + b + c + d + e + f + g + h + i + j + k + l + m + n;
 }
